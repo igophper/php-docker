@@ -1,5 +1,10 @@
 # Build PHP Docker Images
-build php docker images 
+get Dockerfile
+```shell
+curl -sSLf -o Dockerfile https://github.com/igophper/php-docker/releases/download/latest/Dockerfile
+```
+
+build php docker images
 ```shell
 docker build --build-arg BUILD_PHP_VERSION=8.2 BUILD_TIMEZONE=Asia/Shanghai BUILD_EXTENSIONS="mysqli pdo_mysql gd zip bcmath @composer redis mcrypt" .
 ```
