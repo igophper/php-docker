@@ -1,0 +1,23 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  create_release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.PHP_DOCKER_TOKEN }}"
+          automatic_release_tag: "latest"
+          title: "Automatic release"
+          prerelease: false
+          files: |
+            Dockerfile

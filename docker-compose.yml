@@ -4,9 +4,7 @@ services:
   php:
     build:
       context: .
-      dockerfile: https://github.com/igophper/php-docker/Dockerfile
       args:
         - BUILD_PHP_VERSION=8.2 # the php version you want to build
-    environment:
         - BUILD_TIMEZONE=Asia/Shanghai # the timezone you want to set
-        - BUILD_EXTENSIONS="mysqli pdo_mysql gd zip bcmath @composer redis" # the php extensions you want to install
+        - BUILD_EXTENSIONS=mysqli pdo_mysql gd zip bcmath @composer redis
